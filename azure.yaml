@@ -86,9 +86,16 @@ pipeline:
       - AZURE_ADLS_GEN2_STORAGE_ACCOUNT
       - AZURE_ADLS_GEN2_FILESYSTEM_PATH
       - AZURE_ADLS_GEN2_FILESYSTEM
+      #Adding Azure Translation api and endpoint
+      - AZURE_TRANSLATION_API_KEY 
+      - AZURE_TRANSLATION_ENDPOINT
+      # Option to enable or disable translation feature
+      - ENABLE_TRANSLATION
   secrets:
       - AZURE_SERVER_APP_SECRET
       - AZURE_CLIENT_APP_SECRET
+      # Add translation secret key
+      - AZURE_TRANSLATION_API_KEY
 hooks:
     preprovision:
       windows:
